@@ -321,6 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   jumpheight: 200
+  rotSpeed: .5
   countText: 
 --- !u!114 &1348059425
 MonoBehaviour:
@@ -355,6 +356,10 @@ MonoBehaviour:
   oxygen: 0
   timeElapsed: 0
   score: 0
+  o2LossRate: 0
+  digestion: 0
+  hungerThreshold: 0
+  hungerPangs: 0
 --- !u!54 &1348059427
 Rigidbody:
   m_ObjectHideFlags: 0

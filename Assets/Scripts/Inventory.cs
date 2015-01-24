@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 
 public class Inventory : MonoBehaviour {
-	public List<EarthDebris> foundObjects;
+	public Dictionary<string, EarthDebris> foundObjects;
 	public int debrisCapacity;
 	public TextAsset debrisNotice;
-	public List<RawMaterials> craftingSupplies;
+	public Dictionary<string, RawMaterials> craftingSupplies;
 	public static int craftCapacity;
 	public TextAsset craftNotice;
 	public int moonRocks;	
@@ -16,11 +16,14 @@ public class Inventory : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		foundObjects = new Dictionary<string, EarthDebris>();
+		craftingSupplies = new Dictionary<string, RawMaterials>();	
 	}
+
+//Add Functions
 	public void AddDebris (EarthDebris found) {
 		if(!IsDebrisFull()){
-			foundObjects.Add(found);
+			foundObjects.Add(found.key, found);
 			//debrisNotice = debrisSuccess
 		} else {
 			//debrisNotice = debrisFail
@@ -29,12 +32,34 @@ public class Inventory : MonoBehaviour {
 
 	public void AddCraft (RawMaterials newMat) {
 		if(!IsCraftFull()){
-			craftingSupplies.Add(newMat);
+			craftingSupplies.Add(newMat.key, newMat);
 			//debrisNotice = debrisSuccess
 		} else {
 			//debrisNotice = debrisFail
 		}
 	}
+	public void addRocks () {
+		if(!IsMoonFull()) {
+			moonRocks++;
+			//success text
+		}
+		else{//failtext}
+	}
+
+//Subtract Functions
+	public void DecDebris (string key) {
+		foundObjects.Remove(key);
+		//successtext
+	}
+	public void DecCraft (string key) {
+		craftingSupplies.Remove(key);
+		//successtext
+	}
+	public void DecMoon () {
+		moonRocks --;
+		//successtext
+	}
+		
 
 //Helper Functions
 	//CountRetrievers

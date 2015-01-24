@@ -43,7 +43,9 @@ public class Inventory : MonoBehaviour {
 			moonRocks++;
 			//success text
 		}
-		else{//failtext}
+		else{
+			//failtext
+		}
 	}
 
 //Subtract Functions

@@ -266,6 +266,7 @@ MonoBehaviour:
   materialsMod: 0
   pickupText: {fileID: 0}
   useText: {fileID: 0}
+  key: 
 --- !u!4 &568941931
 Transform:
   m_ObjectHideFlags: 0
@@ -317,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a549fa10099443f48121761260b60e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 
 --- !u!1 &648972450
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,9 +716,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6824bcf28b7d845208522505e2cff401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foundObjects: []
-  craftingSupplies: []
+  debrisCapacity: 0
+  debrisNotice: {fileID: 0}
+  craftNotice: {fileID: 0}
   moonRocks: 0
+  moonNotice: {fileID: 0}
 --- !u!114 &1348059426
 MonoBehaviour:
   m_ObjectHideFlags: 0

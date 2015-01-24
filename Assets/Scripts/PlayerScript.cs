@@ -5,6 +5,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public float speed;
 	public float jumpheight;
+    public float rotSpeed;
 	private int count;
 	public string countText;
 
@@ -29,7 +30,7 @@ public class PlayerScript : MonoBehaviour {
 		Vector3 movement = new Vector3 (moveHoriz,0,moveVert);
         // rigidbody.AddForce(movement * speed * Time.deltaTime);
         this.transform.position = this.transform.position + (movement * this.speed * Time.deltaTime);
-        this.transform.rotation = Quaternion.LookRotation(movement);
+        this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(movement), this.rotSpeed);
 	}
 	void SetCountText() {
 		countText = "Count: " + count.ToString();	

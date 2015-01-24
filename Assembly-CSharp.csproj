@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\O2Generator.cs" />
      <Compile Include="Assets\Scripts\O2Node.cs" />
      <Compile Include="Assets\Scripts\PlayerManager.cs" />
+     <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\PowerGenerator.cs" />
      <Compile Include="Assets\Scripts\PowerNode.cs" />
      <Compile Include="Assets\Scripts\RawMaterials.cs" />

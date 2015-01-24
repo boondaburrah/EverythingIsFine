@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PowerNode : MonoBehaviour {
 	public float rateIncrease;
 	public int minCap;
-	public float objFailMod;
+    public bool failed;
 	public PowerNode parent;
 	public List<PowerNode> children;	
 	
@@ -19,4 +19,9 @@ public class PowerNode : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void fail()
+    {
+        this.failed = true;
+    }
 }

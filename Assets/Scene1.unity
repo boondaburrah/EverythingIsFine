@@ -382,11 +382,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   failRate: 0
-  isFail: 0
+  failed: 0
   matFixCost: 0
   sanFixCost: 0
   hasMats: 0
   children: []
+  rollTimeout: 0
+  failureProbability: 0
 --- !u!1001 &658256060
 Prefab:
   m_ObjectHideFlags: 0
@@ -704,6 +706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   jumpheight: 200
+  rotSpeed: .5
   countText: 
 --- !u!114 &1348059425
 MonoBehaviour:
@@ -883,7 +886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rateIncrease: 0
   minCap: 0
-  objFailMod: 0
+  failed: 0
   parent: {fileID: 0}
   children: []
 --- !u!4 &1737894137

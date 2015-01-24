@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class RawMaterials : MonoBehaviour {
+	public string key;
 
 	// Use this for initialization
 	void Start () {

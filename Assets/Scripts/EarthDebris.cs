@@ -6,6 +6,7 @@ public class EarthDebris : MonoBehaviour {
 	public float materialsMod;
 	public TextAsset pickupText;
 	public TextAsset useText;
+	public string key;
 
 	// Use this for initialization
 	void Start () {

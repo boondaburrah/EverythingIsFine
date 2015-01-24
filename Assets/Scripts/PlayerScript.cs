@@ -27,8 +27,9 @@ public class PlayerScript : MonoBehaviour {
 			Jump ();
 		}
 		Vector3 movement = new Vector3 (moveHoriz,0,moveVert);
-		rigidbody.AddForce (movement * speed * Time.deltaTime);
-		
+        // rigidbody.AddForce(movement * speed * Time.deltaTime);
+        this.transform.position = this.transform.position + (movement * this.speed * Time.deltaTime);
+        this.transform.rotation = Quaternion.LookRotation(movement);
 	}
 	void SetCountText() {
 		countText = "Count: " + count.ToString();	

@@ -1,6 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Inventory.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RawMaterials.cs">
     <Files>
       <File FileName="Assets/Scripts/O2Generator.cs" Line="18" Column="16" />
       <File FileName="Assets/Scripts/PowerNode.cs" Line="1" Column="1" />
@@ -8,13 +8,19 @@
       <File FileName="Assets/Scripts/O2Node.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ResourceGenerator.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayerManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Inventory.cs" Line="9" Column="23" />
+      <File FileName="Assets/Scripts/Inventory.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/RawMaterials.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DebrisSpawner.cs" Line="31" Column="37" />
+      <File FileName="Assets/Scripts/DataNode.cs" Line="6" Column="21" />
+      <File FileName="../Dropbox/Fall_2014/thesis/MyFirstUnity/Assets/Scripts/DataCollector.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
+        <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True" />
+            <Node name="Scripts" expanded="True">
+              <Node name="RawMaterials.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

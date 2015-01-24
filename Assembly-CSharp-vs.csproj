@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\DataNode.cs" />
+     <Compile Include="Assets\Scripts\DebrisSpawner.cs" />
      <Compile Include="Assets\Scripts\EarthDebris.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
      <Compile Include="Assets\Scripts\O2Generator.cs" />

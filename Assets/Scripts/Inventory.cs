@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 
 public class Inventory : MonoBehaviour {
+	public static Inventory instance;
 	public Dictionary<string, EarthDebris> foundObjects;
 	public int debrisCapacity;
 	public TextAsset debrisNotice;
@@ -14,6 +15,7 @@ public class Inventory : MonoBehaviour {
 	public static int moonCapacity;
 	public TextAsset moonNotice;
 
+	void Awake () {instance = this;}
 	// Use this for initialization
 	void Start () {
 		foundObjects = new Dictionary<string, EarthDebris>();

@@ -7,7 +7,6 @@ using System.Runtime.CompilerServices;
 public class PowerGenerator : MonoBehaviour {
 	public float failRate;
 	public bool failed;
-	public bool hasMats;
 	public List<PowerNode> children;
     public float rollTimeout;
     public float failureProbability;

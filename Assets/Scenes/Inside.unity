@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 141380309}
   - 114: {fileID: 141380310}
+  - 114: {fileID: 141380311}
   m_Layer: 0
   m_Name: FoodSynth
   m_TagString: Untagged
@@ -113,6 +114,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb0abf79196f4a0fbd0733378d01463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &141380311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141380308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab866cefde2c34f968679f520ef604e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rad: 0
+  sanFixCost: 0
+  matFixCost: 0
+  hasMats: 0
 --- !u!1 &602128773
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +286,7 @@ GameObject:
   - 4: {fileID: 766089760}
   - 114: {fileID: 766089761}
   - 114: {fileID: 766089762}
+  - 114: {fileID: 766089763}
   m_Layer: 0
   m_Name: O2Generator
   m_TagString: Untagged
@@ -302,9 +319,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   failRate: .100000001
   failed: 0
-  matFixCost: 2
-  sanFixCost: 3
-  hasMats: 0
   children: []
   rollTimeout: 20
   failureProbability: .170000002
@@ -320,6 +334,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rad: 5
+--- !u!114 &766089763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 766089759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab866cefde2c34f968679f520ef604e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rad: 0
+  sanFixCost: 0
+  matFixCost: 0
+  hasMats: 0
 --- !u!1 &855345681
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +358,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 855345682}
   - 114: {fileID: 855345683}
+  - 114: {fileID: 855345684}
   m_Layer: 0
   m_Name: ResourceGrinder
   m_TagString: Untagged
@@ -360,9 +390,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPower: 0
-  failState: 0
+  failed: 0
+  parent: {fileID: 0}
+  failRate: 0
+  timeSinceRoll: 0
+  failProb: 0
+  rollTimeout: 0
   generator: {fileID: 2107474767}
   resourceCount: 0
+--- !u!114 &855345684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855345681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab866cefde2c34f968679f520ef604e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rad: 0
+  sanFixCost: 0
+  matFixCost: 0
+  hasMats: 0
 --- !u!1 &981678020
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,6 +564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debrisCapacity: 6
   debrisNotice: 
+  craftCapacity: 0
   craftNotice: 
   moonRocks: 6
   moonNotice: 
@@ -616,6 +667,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2107474766}
   - 114: {fileID: 2107474767}
+  - 114: {fileID: 2107474768}
   m_Layer: 0
   m_Name: PowerGenerator
   m_TagString: Untagged
@@ -648,9 +700,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   failRate: .100000001
   failed: 0
-  matFixCost: 3
-  sanFixCost: 3
-  hasMats: 0
   children: []
   rollTimeout: 20
   failureProbability: .170000002
+--- !u!114 &2107474768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2107474765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab866cefde2c34f968679f520ef604e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rad: 0
+  sanFixCost: 0
+  matFixCost: 0
+  hasMats: 0

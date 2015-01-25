@@ -23,20 +23,20 @@ public class isoCamera : MonoBehaviour
 	    if (playerPosition.x < 0.3)
 	    {
 
-	        this.transform.Translate(-0.3f * Time.deltaTime, 0, 0);
+	        this.transform.Translate(-0.3f * Time.deltaTime * this.scrollSpeed, 0, 0);
         }
         else if (playerPosition.x > 0.7)
         {
-            this.transform.Translate(0.3f * Time.deltaTime, 0, 0);
+            this.transform.Translate(0.3f * Time.deltaTime * this.scrollSpeed, 0, 0);
         }
 	    if (playerPosition.y < 0.3)
 	    {
-	        this.transform.Translate(0, -0.3f * Time.deltaTime, 0);
+	        this.transform.Translate(0, -0.3f * Time.deltaTime * this.scrollSpeed, 0);
             
         }
         else if (playerPosition.y > 0.7)
         {
-            this.transform.Translate(0, 0.3f*Time.deltaTime, 0);
+            this.transform.Translate(0, 0.3f*Time.deltaTime * this.scrollSpeed, 0);
         }
         else
         {

@@ -35,7 +35,7 @@ public class PlayerManager : MonoBehaviour {
 
 	void Awake() {
 		if (control == null) {
-			DontDestroyOnLoad(this);
+			DontDestroyOnLoad(this.gameObject);
 			control = this;
 		}
 		else if (control != this) {

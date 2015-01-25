@@ -6,13 +6,10 @@ public class PlayerScript : MonoBehaviour {
 	public float speed;
 	public float jumpheight;
     public float rotSpeed;
-	private int count;
-	public string countText;
 
 	// Use this for initialization
 	void Start () {
-		count = 0;
-		countText = "Good Luck!";
+		
 	
 	}
 
@@ -36,23 +33,13 @@ public class PlayerScript : MonoBehaviour {
 	            this.rotSpeed);
 	    }
 	}
-	void SetCountText() {
-		countText = "Count: " + count.ToString();	
-	}
 	
-	void OnGUI () {
-		if(count == 6) {
-			GUI.Label(new Rect(10,10,100,20), "You Won!");
-		} else {
-			GUI.Label(new Rect(10,10,100,20), countText);
-		}
-	}
+	
 	
 	void OnTriggerEnter (Collider other) {
 		if (other.gameObject.tag == "PickUp"){
 			other.gameObject.SetActive(false);
-			count++;
-			SetCountText();
+			
 		}
 	}
 }

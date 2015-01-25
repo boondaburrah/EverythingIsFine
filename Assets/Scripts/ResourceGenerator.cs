@@ -3,65 +3,88 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ResourceGenerator : MonoBehaviour {
-	public bool hasPower;
-	public bool failed;
-	public PowerGenerator parent;
-	public float failRate;
-	public float timeSinceRoll;
-	public float failProb;
-	public float rollTimeout;
-	public PowerGenerator generator;
+	
 	public float resourceCount;
 	private Vector3 spawnPos;
-	GameObject prefab;
+	public GameObject prefab;
+	bool playerHere;
+	bool noDebris;
+	GameObject playerHolder;
 	
 
 	// Use this for initialization
 	void Start () {
-		resourceCount =0;
-		this.timeSinceRoll = 0f;
+		resourceCount =0;	
+		playerHere = false;
+		noDebris = false;
 	
 	}
 	public void DebrisIntake (EarthDebris debris){
+		Debug.Log("intaking Debris");
 		resourceCount += debris.materialsMod;
-		PlayerManager.control.DecInsanity(debris.sanityBoost/2);
+		PlayerManager.control.DecInsanity(debris.sanityBoost/2);	
+		MatSpawner(debris.gameObject.name);
 		Destroy(debris.gameObject);
 	}
 			
 		
-	public void MatSpawner (){
+	public void MatSpawner (string name){
 		GameObject newDrop;
 		while(resourceCount > 0) {	
 			spawnPos = transform.position;
 			newDrop = Instantiate(prefab, spawnPos, transform.rotation) as GameObject;
+			newDrop.GetComponent<RawMaterials>().key = "RawMaterialFrom" +name + resourceCount.ToString();
+			newDrop.name= newDrop.GetComponent<RawMaterials>().key;
+			if(newDrop != null) { Debug.Log("success!");}
+			else{Debug.Log("Fail!");}
 			resourceCount--;
 		}		
 	}
-	private bool rollForFailure()
-	{
-		if (this.timeSinceRoll > this.rollTimeout)
-		{
-			this.timeSinceRoll = 0f;
-			float roll = Random.Range(0, 1);
-			if (roll < this.failProb)
-			{
-				return true;
-			}
+	
+	void OnTriggerEnter (Collider player) {
+		Debug.Log ("Triggered");
+		playerHere = true;
+		playerHolder = player.gameObject;	
+			
+	}
+	void OnTriggerExit (Collider player) {
+		playerHere = false;
+	}
+	bool HasDebris(GameObject player) {
+		if (player.GetComponent<Inventory>().getDebCount() > 0){
+			return true;
 		}
 		return false;
 	}
-
+			
+	void OnGUI (){
+		if(this.GetComponent<AskToFix>().failed) {
+			return;
+		}
+		else if(playerHere) {
+			GUI.Label (new Rect(300,300,200, 100), "Press \"return\" to convert debris");
+			if(Input.GetKeyDown("return")){
+				Debug.Log("got key");
+				if(HasDebris(playerHolder)){
+					DebrisIntake(playerHolder.GetComponent<Inventory>().GrabDebris());
+				}
+				else{
+					Debug.Log ("no debris");
+					noDebris = true;
+					playerHere = false;
+				}
+			}
+			else{
+				Debug.Log ("didn't read key");
+			}
+		}
+		else if (noDebris){
+			GUI.Label (new Rect (300, 300, 200, 100), "I don't have anything to change!");
+		}
+	}
 	// Update is called once per frame
 	void Update () {
-		this.timeSinceRoll += Time.deltaTime;
-		if (this.rollForFailure())
-		{
-			this.failed = true;
-			Debug.Log (this.gameObject.name +" is offline");
-		}
-		if (this.failed) {		
-			this.GetComponent<AskToFix>().GrabPlayer(this.transform.position);
-		}
+	
 	
 	}
 }

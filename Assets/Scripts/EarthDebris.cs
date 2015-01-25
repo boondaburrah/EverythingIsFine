@@ -8,17 +8,16 @@ public class EarthDebris : MonoBehaviour {
 	public string useText;
 	public string key;
 	public float commonality;
-
-	// Use this for initialization
-	void Start () {
+	public Vector3 lerpStart;
+	public Vector3 lerpEnd;
+	public float lerpConstant;
+	public float startTime;
+	public float journeyLength;
+	public float speed;
 	
-	}
+		
 	void OnTriggerEnter (Collider collider) {
-		Inventory.instance.AddDebris(this);
-		this.gameObject.SetActive(false);
+		Inventory.instance.AddDebris(this);		
 	}
-	// Update is called once per frame
-	void Update () {
 	
-	}
 }

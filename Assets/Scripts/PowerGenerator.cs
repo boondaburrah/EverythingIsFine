@@ -30,6 +30,7 @@ public class PowerGenerator : MonoBehaviour {
 	    {
 	        this.failed = true;
             this.cascadeFailure();
+			Debug.Log (this.gameObject.name +" is offline");
 	    }
 	}
 

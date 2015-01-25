@@ -59,6 +59,12 @@ MonoBehaviour:
   useText: 
   key: 
   commonality: 0
+  lerpStart: {x: 0, y: 1, z: 0}
+  lerpEnd: {x: 0, y: 2, z: 0}
+  lerpConstant: 0
+  startTime: 0
+  journeyLength: 0
+  speed: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

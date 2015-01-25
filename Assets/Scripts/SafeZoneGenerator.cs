@@ -8,13 +8,13 @@ public class SafeZoneGenerator : MonoBehaviour {
 		Collider[] safeZone = Physics.OverlapSphere(center, rad);
 		for (int i = 0; i < safeZone.Length; i++){
 			if(safeZone[i].gameObject.tag == "Player") {
-				safeZone[i].GetComponent<PlayerManager>().inSafeZone = true;
+				safeZone[i].GetComponent<PlayerManager>().ResetSafe();
 			}
 		}
 	}
 	// Update is called once per frame
 	void Update () {
-		PowerGenerator generator = this.gameObject.GetComponent<PowerGenerator>();
+		AskToFix generator = this.gameObject.GetComponent<AskToFix>();
 		if(generator != null && generator.failed){
 			return;
 		}

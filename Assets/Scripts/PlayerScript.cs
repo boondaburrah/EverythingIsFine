@@ -13,8 +13,7 @@ public class PlayerScript : MonoBehaviour {
 	void Start () {
 		count = 0;
 		countText = "Good Luck!";
-
-	    ((Animation) this.GetComponent("Animation")).Play();
+	
 	}
 
 	void Jump () {

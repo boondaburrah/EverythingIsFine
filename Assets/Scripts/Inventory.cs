@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class Inventory : MonoBehaviour {
 	public static Inventory instance;
 	public Dictionary<string, EarthDebris> foundObjects;
+	public List<EarthDebris> foundList;
 	public int debrisCapacity;
 	public string debrisNotice;
 	public Dictionary<string, RawMaterials> craftingSupplies;
@@ -27,7 +28,9 @@ public class Inventory : MonoBehaviour {
 	public void AddDebris (EarthDebris found) {
 		if(!IsDebrisFull()){
 			foundObjects.Add(found.key, found);
+			foundList.Add(found);
 			found.gameObject.SetActive(false);
+			this.GetComponent<PlayerManager>().IncInsanity(found.sanityBoost);
 			Debug.Log ("AddDebris success!");
 			//debrisNotice = debrisSuccess
 		} else {
@@ -39,7 +42,7 @@ public class Inventory : MonoBehaviour {
 	public void AddCraft (RawMaterials newMat) {
 		if(!IsCraftFull()){
 			craftingSupplies.Add(newMat.key, newMat);
-			//debrisNotice = debrisSuccess
+			Debug.Log ("AddCraft success!");
 		} else {
 			//debrisNotice = debrisFail
 		}
@@ -67,12 +70,23 @@ public class Inventory : MonoBehaviour {
 		moonRocks --;
 		//successtext
 	}
+
+//Pop function
+	public EarthDebris GrabDebris() {
+		EarthDebris temp;
+		int i = Random.Range(0, foundList.Count-1);
+		temp = foundList[i];
+		foundObjects.Remove(temp.key);
+		foundList.Remove(foundList[i]);
+		return temp;	
+	}
+		
 		
 
 //Helper Functions
 	//CountRetrievers
-	int getDebCount () { return foundObjects.Count;}
-	int getCraftCount () {return craftingSupplies.Count;}
+	public int getDebCount () { return foundObjects.Count;}
+	public int getCraftCount () {return craftingSupplies.Count;}
 
 	//Capacity Checkers
 	bool IsDebrisFull () {

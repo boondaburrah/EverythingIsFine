@@ -7,6 +7,10 @@ public class PlayerManager : MonoBehaviour {
 	public float hunger;
 	public float insanity;
 	public float oxygen;
+	public float healthCap;
+	public float hungerCap;
+	public float insanityCap;
+	public float o2Cap;
 	public float timeElapsed;
 	private float startTime;
 	public float score;
@@ -39,6 +43,11 @@ public class PlayerManager : MonoBehaviour {
 		}
 		timeElapsed = 0;
 		startTime = Time.time;
+		health = healthCap;
+		hunger = hungerCap;
+		insanity = insanityCap;
+		oxygen = o2Cap;
+
 	}
 		
 	// Use this for initialization
@@ -60,9 +69,16 @@ public class PlayerManager : MonoBehaviour {
 	public void IncInsanity (float val) {
 		insanity += val;
 	}	
+	public void FillHunger (float val) {
+		if(hunger + val < hungerCap){
+			hunger += val;
+		}
+	}
 
 
-		
+	public void ResetSafe(){
+		inSafeZone = true;
+	}	
 	// Update is called once per frame
 	void Update () {
 		if(dead) {return;}
@@ -74,6 +90,9 @@ public class PlayerManager : MonoBehaviour {
 		if(!inSafeZone && oxygen > 0){
 			oxygen -= o2LossRate * Time.deltaTime;
 		}
+		if(inSafeZone && oxygen < o2Cap) {
+			oxygen += (2* o2LossRate)*Time.deltaTime;
+		}
 		if(oxygen <= 0) {
 			health -= apoxia * Time.deltaTime;
 		}
@@ -81,6 +100,7 @@ public class PlayerManager : MonoBehaviour {
 		if(hunger < hungerThreshold){
 			health -= hungerPangs *Time.deltaTime;	
 		}
+		inSafeZone = false;
 		//PrintUpdate(); //debug
 	}
 }

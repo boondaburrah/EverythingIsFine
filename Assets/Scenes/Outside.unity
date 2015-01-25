@@ -214,6 +214,7 @@ GameObject:
   - 92: {fileID: 1304924933}
   - 124: {fileID: 1304924932}
   - 81: {fileID: 1304924931}
+  - 114: {fileID: 1304924936}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -261,7 +262,7 @@ Camera:
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -280,12 +281,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1304924930}
-  m_LocalRotation: {x: .196516603, y: 0, z: 0, w: .980500579}
-  m_LocalPosition: {x: 0, y: 9.62619972, z: -28.0499992}
+  m_LocalRotation: {x: .18155767, y: .375221342, z: -.0752036572, w: .905864358}
+  m_LocalPosition: {x: -5, y: 9.62619972, z: -28.0499992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1304924936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1304924930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1927b09b1a763849aa7ef3c5af7c161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1348059423}
 --- !u!1 &1348059423
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +500,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
@@ -497,11 +510,11 @@ Light:
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 1
+  m_Lightmapping: 0
   m_ShadowSamples: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0

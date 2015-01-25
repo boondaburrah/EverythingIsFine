@@ -30,7 +30,11 @@ public class PlayerScript : MonoBehaviour {
 		Vector3 movement = new Vector3 (moveHoriz,0,moveVert);
         // rigidbody.AddForce(movement * speed * Time.deltaTime);
         this.transform.position = this.transform.position + (movement * this.speed * Time.deltaTime);
-        this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(movement), this.rotSpeed);
+	    if (movement.magnitude > 0.1)
+	    {
+	        this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(movement),
+	            this.rotSpeed);
+	    }
 	}
 	void SetCountText() {
 		countText = "Count: " + count.ToString();	

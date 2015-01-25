@@ -11,7 +11,10 @@ public class EarthDebris : MonoBehaviour {
 	
 		
 	void OnTriggerEnter (Collider collider) {
-		Inventory.instance.AddDebris(this);		
+		rigidbody.isKinematic=true;
+		if(collider.gameObject.tag == "Player"){
+			Inventory.instance.AddDebris(this);		
+		}
 	}
 	
 }

@@ -7,8 +7,6 @@ using System.Runtime.CompilerServices;
 public class PowerGenerator : MonoBehaviour {
 	public float failRate;
 	public bool failed;
-	public float matFixCost;
-	public float sanFixCost;
 	public bool hasMats;
 	public List<PowerNode> children;
     public float rollTimeout;
@@ -32,6 +30,9 @@ public class PowerGenerator : MonoBehaviour {
             this.cascadeFailure();
 			Debug.Log (this.gameObject.name +" is offline");
 	    }
+		if (this.failed) {		
+			this.GetComponent<AskToFix>().GrabPlayer(this.transform.position);
+		}
 	}
 
     private bool rollForFailure()
@@ -55,4 +56,10 @@ public class PowerGenerator : MonoBehaviour {
             node.fail();
         }
     }
+	private void FixUp (){
+		this.failed = false;
+		this.timeSinceRoll = 0f;
+		this.failureProbability++;
+	}
 }
+

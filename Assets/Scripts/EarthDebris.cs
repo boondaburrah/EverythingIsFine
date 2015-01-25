@@ -7,13 +7,7 @@ public class EarthDebris : MonoBehaviour {
 	public string pickupText;
 	public string useText;
 	public string key;
-	public float commonality;
-	public Vector3 lerpStart;
-	public Vector3 lerpEnd;
-	public float lerpConstant;
-	public float startTime;
-	public float journeyLength;
-	public float speed;
+	public float commonality;	
 	
 		
 	void OnTriggerEnter (Collider collider) {

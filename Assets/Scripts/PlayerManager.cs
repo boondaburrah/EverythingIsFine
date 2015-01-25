@@ -60,6 +60,8 @@ public class PlayerManager : MonoBehaviour {
 	public void IncInsanity (float val) {
 		insanity += val;
 	}	
+
+
 		
 	// Update is called once per frame
 	void Update () {

@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour {
 	public int debrisCapacity;
 	public string debrisNotice;
 	public Dictionary<string, RawMaterials> craftingSupplies;
-	public static int craftCapacity;
+	public int craftCapacity;
 	public string craftNotice;
 	public int moonRocks;	
 	public static int moonCapacity;
@@ -28,8 +28,10 @@ public class Inventory : MonoBehaviour {
 		if(!IsDebrisFull()){
 			foundObjects.Add(found.key, found);
 			found.gameObject.SetActive(false);
+			Debug.Log ("AddDebris success!");
 			//debrisNotice = debrisSuccess
 		} else {
+			Debug.Log ("AddDebris Fail!");
 			//debrisNotice = debrisFail
 		}
 	}

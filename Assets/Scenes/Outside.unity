@@ -358,11 +358,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6824bcf28b7d845208522505e2cff401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debrisCapacity: 0
-  debrisNotice: {fileID: 0}
-  craftNotice: {fileID: 0}
+  debrisCapacity: 6
+  debrisNotice: '&'
+  craftCapacity: 3
+  craftNotice: '*'
   moonRocks: 0
-  moonNotice: {fileID: 0}
+  moonNotice: 0
+  inventoryDialogue: {fileID: 0}
 --- !u!114 &1348059426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,16 +376,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a56e9767faa64406963cdbfe704c246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  hunger: 0
-  insanity: 0
-  oxygen: 0
+  health: 4
+  hunger: 50
+  insanity: 50
+  oxygen: 50
   timeElapsed: 0
   score: 0
-  o2LossRate: 0
-  digestion: 0
-  hungerThreshold: 0
-  hungerPangs: 0
+  o2LossRate: .600000024
+  apoxia: .100000001
+  digestion: .300000012
+  hungerThreshold: 10
+  hungerPangs: .0500000007
+  inSafeZone: 0
 --- !u!54 &1348059427
 Rigidbody:
   m_ObjectHideFlags: 0

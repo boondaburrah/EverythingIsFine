@@ -7,18 +7,11 @@ public class EarthDebris : MonoBehaviour {
 	public string pickupText;
 	public string useText;
 	public string key;
-	public float commonality;
-
-	// Use this for initialization
-	void Start () {
+	public float commonality;	
 	
-	}
+		
 	void OnTriggerEnter (Collider collider) {
-		Inventory.instance.AddDebris(this);
-		this.gameObject.SetActive(false);
+		Inventory.instance.AddDebris(this);		
 	}
-	// Update is called once per frame
-	void Update () {
 	
-	}
 }

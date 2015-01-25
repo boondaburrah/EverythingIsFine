@@ -7,13 +7,14 @@ public class Inventory : MonoBehaviour {
 	public static Inventory instance;
 	public Dictionary<string, EarthDebris> foundObjects;
 	public int debrisCapacity;
-	public TextAsset debrisNotice;
+	public string debrisNotice;
 	public Dictionary<string, RawMaterials> craftingSupplies;
-	public static int craftCapacity;
-	public TextAsset craftNotice;
+	public int craftCapacity;
+	public string craftNotice;
 	public int moonRocks;	
 	public static int moonCapacity;
-	public TextAsset moonNotice;
+	public string moonNotice;
+	public TextAsset inventoryDialogue;
 
 	void Awake () {instance = this;}
 	// Use this for initialization
@@ -26,8 +27,11 @@ public class Inventory : MonoBehaviour {
 	public void AddDebris (EarthDebris found) {
 		if(!IsDebrisFull()){
 			foundObjects.Add(found.key, found);
+			found.gameObject.SetActive(false);
+			Debug.Log ("AddDebris success!");
 			//debrisNotice = debrisSuccess
 		} else {
+			Debug.Log ("AddDebris Fail!");
 			//debrisNotice = debrisFail
 		}
 	}
@@ -85,13 +89,5 @@ public class Inventory : MonoBehaviour {
 		if (moonRocks == moonCapacity) {return true;}
 		else {return false;}
 	}
-			
-			
-			
-		
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

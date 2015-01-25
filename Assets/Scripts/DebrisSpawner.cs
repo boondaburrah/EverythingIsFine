@@ -45,6 +45,8 @@ public class DebrisSpawner : MonoBehaviour {
 			newDrop = Instantiate(prefab, spawnPos,transform.rotation) as GameObject;
 			type = PullType();
 			newDrop = PrefabUpdate(newDrop, type);
+			newDrop.name = (type.spriteName + spawnCount.ToString());
+			newDrop.GetComponent<EarthDebris>().key = newDrop.name;
 			spawnCount++;
 		}	
 	}

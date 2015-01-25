@@ -3,14 +3,11 @@ using System.Collections;
 
 public class RawMaterials : MonoBehaviour {
 	public string key;
+	public float fixMod;
+	public string pickupText;
+	public string useText;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void OnTriggerEnter (Collider collider) {
+		Inventory.instance.AddCraft(this);		
 	}
 }

@@ -95,7 +95,7 @@ public class DebrisSpawner : MonoBehaviour {
 	Vector3 GetVector () {
 		Vector3 retval;
 		float x;
-		float y = (float) 1.5;
+		float y = (float) 200;
 		float z;
 		x = Random.Range (xRangeMin, xRangeMax);
 		z = Random.Range (zRangeMin, zRangeMax);

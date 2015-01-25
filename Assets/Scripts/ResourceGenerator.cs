@@ -58,11 +58,12 @@ public class ResourceGenerator : MonoBehaviour {
 	}
 			
 	void OnGUI (){
+		Rect dialogue = new Rect(300,300,200, 100);
 		if(this.GetComponent<AskToFix>().failed) {
 			return;
 		}
 		else if(playerHere) {
-			GUI.Label (new Rect(300,300,200, 100), "Press \"return\" to convert debris");
+			GUI.Label (dialogue, "Press \"return\" to convert debris");
 			if(Input.GetKeyDown("return")){
 				Debug.Log("got key");
 				if(HasDebris(playerHolder)){
@@ -74,12 +75,10 @@ public class ResourceGenerator : MonoBehaviour {
 					playerHere = false;
 				}
 			}
-			else{
-				Debug.Log ("didn't read key");
-			}
+		
 		}
 		else if (noDebris){
-			GUI.Label (new Rect (300, 300, 200, 100), "I don't have anything to change!");
+			GUI.Label (dialogue, "I don't have anything to change!");
 		}
 	}
 	// Update is called once per frame

@@ -69,11 +69,12 @@ public class AskToFix : MonoBehaviour {
 	}
 
 	void OnGUI () {
+		Rect dialogue = new Rect(300,300,200,100);
 		if(asking){
-			GUI.Label (new Rect(300,300,200,100),"Press \"return\" to Fix");
+			GUI.Label (dialogue, "Press \"return\" to Fix");
 		}
 		else if(noFix) {
-			GUI.Label (new Rect(300,300,200,100),"Oh no, I need more materials! I can't handle this!");
+			GUI.Label (dialogue,"Oh no, I need more materials! I can't handle this!");
 		}
 	
 	}	
